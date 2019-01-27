@@ -1,24 +1,22 @@
 import React from "react";
+import { connect } from "react-redux";
+import { parseHoursJSONData } from "../../actions";
+import { formatUnixTime } from "../utils";
 
-const FileInput = () => {
+const FileInput = props => {
   const handleFileChange = event => {
     const reader = new FileReader();
     reader.onload = onReaderLoad;
-    reader.readAsText(event.target.files[0]);
+    if (event.target.files[0]) {
+      reader.readAsText(event.target.files[0]);
+    }
   };
 
+  // event handler for FileReader onload
   const onReaderLoad = event => {
     const openingHoursObj = JSON.parse(event.target.result);
-    console.log(openingHoursObj);
 
-    let arr = Object.keys(openingHoursObj).map(key => {
-      return {
-        day: key,
-        data: openingHoursObj[key]
-      };
-    });
-
-    console.log(arr);
+    props.parseHoursJSONData(openingHoursObj);
   };
 
   return (
@@ -35,4 +33,7 @@ const FileInput = () => {
   );
 };
 
-export default FileInput;
+export default connect(
+  null,
+  { parseHoursJSONData }
+)(FileInput);

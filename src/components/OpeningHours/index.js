@@ -1,47 +1,30 @@
 import React, { Component } from "react";
-
+import PropTypes from "prop-types";
 import HourInfoList from "./HourInfoList";
 
+import { connect } from "react-redux";
+
 class OpeningHours extends Component {
-  openingHours = [
-    {
-      day: "monday",
-      hours: ["11 AM - 8 PM"]
-    },
-    {
-      day: "tuesday",
-      hours: ["11 AM - 8 PM"]
-    },
-    {
-      day: "wednesday",
-      hours: ["11 AM - 8 PM"]
-    },
-    {
-      day: "thursday",
-      hours: ["11 AM - 8 PM"]
-    },
-    {
-      day: "friday",
-      hours: ["11 AM - 6 PM", "10 PM - 2 AM"]
-    },
-    {
-      day: "saturday",
-      hours: ["11 AM - 8 PM"]
-    },
-    {
-      day: "sunday",
-      isToday: true,
-      hours: []
-    }
-  ];
+  static defaultProps = {
+    openingHours: []
+  };
   render() {
     return (
       <div>
         <div>Opening hours</div>
-        <HourInfoList openingHours={this.openingHours} />
+        <HourInfoList openingHours={this.props.openingHours} />
       </div>
     );
   }
 }
 
-export default OpeningHours;
+OpeningHours.propTypes = {
+  openingHours: PropTypes.array
+};
+
+const mapStateToProps = ({ openingHours }) => {
+  return {
+    openingHours: openingHours.data
+  };
+};
+export default connect(mapStateToProps)(OpeningHours);
