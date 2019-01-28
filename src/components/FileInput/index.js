@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./FileInput.css";
+
 import { connect } from "react-redux";
 import { getJsonFromInput } from "../../actions";
 

@@ -1,18 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "CircularStd-Black", sans-serif;
+  font-family: "CircularStd-Book", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@font-face {
-  font-family: "CircularStd-Black";
-  src: local("CircularStd-Black"),
-    url(./assets/fonts/CircularStd-Black.woff) format("woff");
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }

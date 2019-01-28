@@ -8,8 +8,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <FileInput />
-        <OpeningHours />
+        <div className="left">
+          <FileInput />
+        </div>
+        <div className="right">
+          <OpeningHours />
+        </div>
       </div>
     );
   }

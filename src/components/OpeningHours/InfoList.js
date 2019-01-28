@@ -7,6 +7,7 @@ const InfoList = props => {
   const renderOpeningHours = weeklyOpeningHours =>
     weeklyOpeningHours.map((item, index, array) => {
       // if current item is the last, next item will be the first
+      // e.g. sunday => monday
       const nextIndex = index + 1 === array.length ? 0 : index + 1;
       const nextItem = array[nextIndex];
 

@@ -13,17 +13,12 @@ const InfoItem = ({ currentDay, nextDay }) => {
 
   return (
     <div>
-      <DayDisplay day={currentDay.dayOfWeek} today={today} />
+      <DayDisplay day={currentDay.dayOfWeek} isToday={today} />
       <HoursDisplay hours={openingHours} />
     </div>
   );
 };
 
-/* {props.hours.length ? (
-  props.hours.map((item, index) => <div key={index}>{item}</div>)
-) : (
-  <div>Closed</div>
-)} */
 InfoItem.propTypes = {
   currentDay: PropTypes.object,
   nextDay: PropTypes.object
