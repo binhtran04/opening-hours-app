@@ -1,1 +1,1 @@
-export const PARSE_HOURS_JSON_DATA = "parse_hours_json_data";
+export const GET_JSON_FROM_INPUT = "get_json_from_input";

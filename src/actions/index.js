@@ -1,26 +1,30 @@
-import { PARSE_HOURS_JSON_DATA } from "./types";
-import { formatUnixTime, getDayIndex } from "../utils";
+import { GET_JSON_FROM_INPUT } from "./types";
+import {
+  formatUnixTime,
+  getDayIndex,
+  sortByHourValue,
+  sortByDayOfWeek
+} from "../utils";
 
-export function parseHoursJSONData(jsonData) {
-  let openingHoursArr = Object.keys(jsonData).map(day => {
-    // sort hours data
-    const hoursData = jsonData[day].sort((a, b) => {
-      return a.value - b.value;
-    });
+export function getJsonFromInput(jsonData) {
+  let weeklyOpeningHours = Object.keys(jsonData)
+    .map(dayOfWeek => {
+      const hours = jsonData[dayOfWeek].sort(sortByHourValue);
 
-    const item = {
-      day,
-      index: getDayIndex(day),
-      hoursData
-    };
+      const item = {
+        dayOfWeek,
+        index: getDayIndex(dayOfWeek),
+        hours
+      };
 
-    return item;
-  });
+      return item;
+    })
+    .sort(sortByDayOfWeek);
 
   // move the special close hour (hour span to the next day)
   // to the previous day
-  openingHoursArr.forEach((item, index, array) => {
-    const nextItem = array[index + 1];
+  /* weeklyOpeningHours.forEach((item, index, array) => {
+     const nextItem = array[index + 1];
 
     // not empty hours data
     // and not the last item
@@ -37,14 +41,14 @@ export function parseHoursJSONData(jsonData) {
     }
   });
 
-  openingHoursArr.forEach(item => {
+  weeklyOpeningHours.forEach(item => {
     item.hours = item.hoursData.map(hoursItem => {
       return formatUnixTime(hoursItem.value);
     });
-  });
+  }); */
 
   return {
-    type: PARSE_HOURS_JSON_DATA,
-    payload: openingHoursArr
+    type: GET_JSON_FROM_INPUT,
+    payload: weeklyOpeningHours
   };
 }

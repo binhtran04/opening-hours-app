@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import openingHours from "./openingHours";
 
 const rootReducer = combineReducers({
-  openingHours
+  weeklyOpeningHours: openingHours
 });
 
 export default rootReducer;

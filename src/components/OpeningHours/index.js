@@ -1,30 +1,31 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import HourInfoList from "./HourInfoList";
+import InfoList from "./InfoList";
 
 import { connect } from "react-redux";
 
 class OpeningHours extends Component {
   static defaultProps = {
-    openingHours: []
+    weeklyOpeningHours: []
   };
+
   render() {
     return (
       <div>
         <div>Opening hours</div>
-        <HourInfoList openingHours={this.props.openingHours} />
+        <InfoList weeklyOpeningHours={this.props.weeklyOpeningHours} />
       </div>
     );
   }
 }
 
 OpeningHours.propTypes = {
-  openingHours: PropTypes.array
+  weeklyOpeningHours: PropTypes.array
 };
 
-const mapStateToProps = ({ openingHours }) => {
+const mapStateToProps = ({ weeklyOpeningHours }) => {
   return {
-    openingHours: openingHours.data
+    weeklyOpeningHours: weeklyOpeningHours.data
   };
 };
 export default connect(mapStateToProps)(OpeningHours);

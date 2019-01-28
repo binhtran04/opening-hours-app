@@ -1,8 +1,8 @@
-import { PARSE_HOURS_JSON_DATA } from "../actions/types";
+import { GET_JSON_FROM_INPUT } from "../actions/types";
 
 export default function(state = {}, action) {
   switch (action.type) {
-    case PARSE_HOURS_JSON_DATA:
+    case GET_JSON_FROM_INPUT:
       return { ...state, data: action.payload };
     default:
       return state;

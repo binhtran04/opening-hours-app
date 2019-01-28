@@ -1,9 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { parseHoursJSONData } from "../../actions";
-import { formatUnixTime } from "../utils";
+import { getJsonFromInput } from "../../actions";
 
-const FileInput = props => {
+export const FileInput = props => {
   const handleFileChange = event => {
     const reader = new FileReader();
     reader.onload = onReaderLoad;
@@ -16,7 +16,7 @@ const FileInput = props => {
   const onReaderLoad = event => {
     const openingHoursObj = JSON.parse(event.target.result);
 
-    props.parseHoursJSONData(openingHoursObj);
+    props.getJsonFromInput(openingHoursObj);
   };
 
   return (
@@ -33,7 +33,11 @@ const FileInput = props => {
   );
 };
 
+FileInput.propTypes = {
+  getJsonFromInput: PropTypes.func
+};
+
 export default connect(
   null,
-  { parseHoursJSONData }
+  { getJsonFromInput }
 )(FileInput);
