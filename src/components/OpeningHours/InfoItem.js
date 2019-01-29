@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { geteOpeningHours, isToday } from "../../utils/index";
+import { getOpeningHours, isToday } from "../../utils/index";
 import DayDisplay from "./DayDisplay";
 import HoursDisplay from "./HoursDisplay";
 
 const InfoItem = ({ currentDay, nextDay }) => {
-  const openingHours = geteOpeningHours(currentDay.hours, nextDay.hours);
+  const openingHours = getOpeningHours(currentDay.hours, nextDay.hours);
   const today = isToday(currentDay.dayOfWeek);
 
   console.log(openingHours, today);

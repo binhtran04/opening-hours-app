@@ -1,0 +1,24 @@
+.heading1 {
+  font-family: "CircularStd-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 30px;
+  color: #202125;
+}
+.heading3 {
+  font-family: "CircularStd-Medium", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #202125;
+}
+.heading4 {
+  font-family: "CircularStd-Bold", sans-serif;
+  font-size: 12px;
+  line-height: 22px;
+  color: #57cc14;
+}
+.paragraph {
+  font-family: "CircularStd-Book", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #202125;
+}

@@ -1,12 +1,10 @@
 import React from "react";
 import "./H1.css";
+import classNames from "classnames";
 
 const H1 = props => {
-  return (
-    <div className={`H1 ${props.addClass ? props.addClass : ""}`}>
-      {props.title}
-    </div>
-  );
+  const classes = classNames("H1", props.className);
+  return <div className={classes}>{props.children}</div>;
 };
 
 export default H1;
