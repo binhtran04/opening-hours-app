@@ -1,14 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import H3 from "../ui/H3";
-import H4 from "../ui/H4";
+import Typography from "../ui/Typography";
 
 const DayDisplay = ({ day, isToday }) => {
   return (
     <div className="day__wrapper">
-      <H3 addClass="day__dayoftheweek" title={day} />
+      <Typography variant="heading3" className="day__dayoftheweek">
+        {day}
+      </Typography>
 
-      {isToday && <H4 addClass="day__today" title="TODAY" />}
+      {isToday && (
+        <Typography variant="heading4" className="day__today">
+          TODAY
+        </Typography>
+      )}
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { formatUnixTime } from "../../utils";
-import Paragraph from "../ui/Paragraph";
+import Typography from "../ui/Typography";
+import classNames from "classnames";
 
 const HoursDisplay = ({ hours }) => {
   const generateHoursDisplayText = formattedHours => {
@@ -28,11 +29,14 @@ const HoursDisplay = ({ hours }) => {
   const formattedHours = hours.map(h => formatUnixTime(h.value));
   const hoursDisplayText = generateHoursDisplayText(formattedHours);
 
+  const hourClass = classNames({
+    hour: true,
+    closed: hoursDisplayText === "Closed"
+  });
   return (
-    <Paragraph
-      addClass={`hour ${hoursDisplayText === "Closed" ? "closed" : ""}`}
-      content={hoursDisplayText}
-    />
+    <Typography variant="paragraph" className={hourClass}>
+      {hoursDisplayText}
+    </Typography>
   );
 };
 
