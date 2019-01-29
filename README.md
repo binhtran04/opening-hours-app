@@ -1,6 +1,7 @@
 # Opening Hours App
 
 This application takes an JSON input as opening hours of a restaurant and output those hours in a human readable format.
+The repository also includes some test input JSON files in test_data directory.
 
 ## Getting Started
 
