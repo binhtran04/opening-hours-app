@@ -8,9 +8,6 @@ const InfoItem = ({ currentDay, nextDay }) => {
   const openingHours = getOpeningHours(currentDay.hours, nextDay.hours);
   const today = isToday(currentDay.dayOfWeek);
 
-  console.log(openingHours, today);
-  console.log("=======");
-
   return (
     <div className="content__row">
       <DayDisplay day={currentDay.dayOfWeek} isToday={today} />

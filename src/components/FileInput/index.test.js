@@ -5,8 +5,7 @@ import { FileInput } from "./index";
 import "react-testing-library/cleanup-after-each";
 import "jest-dom/extend-expect";
 
-it("should render", () => {
-  const { debug, queryByLabelText } = render(<FileInput />);
-  debug();
+it("Should render Choose a JSON file", () => {
+  const { queryByLabelText } = render(<FileInput />);
   expect(queryByLabelText(/Choose a JSON file/i)).toBeVisible();
 });

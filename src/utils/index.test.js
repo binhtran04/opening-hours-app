@@ -22,8 +22,8 @@ it("get correct day index", () => {
 });
 
 it("get opening hours", () => {
-  let mondayHours = [];
-  let tuesdayHours = [
+  const mondayHours = [];
+  const tuesdayHours = [
     {
       type: "open",
       value: 36000
@@ -33,13 +33,13 @@ it("get opening hours", () => {
       value: 64800
     }
   ];
-  let fridayHours = [
+  const fridayHours = [
     {
       type: "open",
       value: 36000
     }
   ];
-  let saturdayHours = [
+  const saturdayHours = [
     {
       type: "close",
       value: 3600

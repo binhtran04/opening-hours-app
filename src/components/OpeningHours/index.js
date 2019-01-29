@@ -9,7 +9,7 @@ import clockIcon from "../../assets/icons/clock-regular.svg";
 
 import { connect } from "react-redux";
 
-class OpeningHours extends Component {
+export class OpeningHours extends Component {
   static defaultProps = {
     weeklyOpeningHours: []
   };
@@ -39,7 +39,7 @@ OpeningHours.propTypes = {
 
 const mapStateToProps = ({ weeklyOpeningHours }) => {
   return {
-    weeklyOpeningHours: weeklyOpeningHours.data
+    weeklyOpeningHours
   };
 };
 export default connect(mapStateToProps)(OpeningHours);

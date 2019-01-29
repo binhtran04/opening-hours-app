@@ -2,6 +2,13 @@ import { GET_JSON_FROM_INPUT } from "./types";
 import { getDayIndex } from "../utils";
 
 export function getJsonFromInput(jsonData) {
+  if (!jsonData) {
+    return {
+      type: GET_JSON_FROM_INPUT,
+      payload: []
+    };
+  }
+
   const _sortByDayOfWeek = (a, b) => {
     const dayIndexA = getDayIndex(a.dayOfWeek);
     const dayIndexB = getDayIndex(b.dayOfWeek);

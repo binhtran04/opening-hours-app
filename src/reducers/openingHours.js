@@ -1,9 +1,9 @@
 import { GET_JSON_FROM_INPUT } from "../actions/types";
 
-export default function(state = {}, action) {
+export default function(state = [], action) {
   switch (action.type) {
     case GET_JSON_FROM_INPUT:
-      return { ...state, data: action.payload };
+      return [...action.payload];
     default:
       return state;
   }

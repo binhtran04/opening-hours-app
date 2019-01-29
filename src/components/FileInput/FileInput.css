@@ -1,0 +1,9 @@
+.fileinput {
+  padding: 15px;
+  border: 1px solid #202125;
+}
+.fileinput__error {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 10px;
+}
