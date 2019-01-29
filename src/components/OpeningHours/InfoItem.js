@@ -12,7 +12,7 @@ const InfoItem = ({ currentDay, nextDay }) => {
   console.log("=======");
 
   return (
-    <div>
+    <div className="content__row">
       <DayDisplay day={currentDay.dayOfWeek} isToday={today} />
       <HoursDisplay hours={openingHours} />
     </div>

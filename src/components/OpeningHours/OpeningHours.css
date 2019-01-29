@@ -1,0 +1,40 @@
+.hourwidget {
+  width: 660px;
+  padding: 55px 65px 60px;
+  background-color: #ffffff;
+  border: 1px solid rgba(32, 33, 37, 0.08);
+  border-radius: 5px;
+}
+.hourwidget__header {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #202125;
+}
+.icon__wrapper {
+  width: 16px;
+  height: 16px;
+  margin-right: 16px;
+}
+.content__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(32, 33, 37, 0.08);
+}
+.day__wrapper {
+  display: flex;
+  align-items: baseline;
+}
+.day__dayoftheweek {
+  text-transform: capitalize;
+}
+.day__today {
+  color: rgb(87, 204, 20);
+  margin-left: 5px;
+  text-transform: capitalize;
+}
+.hour.closed {
+  color: rgba(32, 33, 37, 0.42);
+}

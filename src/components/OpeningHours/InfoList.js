@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import InfoItem from "./InfoItem";
 
 const InfoList = props => {
@@ -16,7 +15,11 @@ const InfoList = props => {
       );
     });
 
-  return <div>{renderOpeningHours(props.weeklyOpeningHours)}</div>;
+  return (
+    <div className="content__wrapper">
+      {renderOpeningHours(props.weeklyOpeningHours)}
+    </div>
+  );
 };
 
 InfoList.propTypes = {

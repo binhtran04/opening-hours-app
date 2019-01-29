@@ -30,7 +30,7 @@ export const getDayIndex = dayOfWeek => {
     case "sunday":
       return 7;
     default:
-      return null;
+      return 1000;
   }
 };
 
@@ -75,25 +75,4 @@ export const isToday = dayOfWeek => {
     todayIndex === currentDayIndex ||
     (todayIndex === 0 && currentDayIndex === 7)
   );
-};
-
-export const generateHoursDisplayText = formattedHours => {
-  if (!formattedHours.length) {
-    return "Closed";
-  }
-
-  let hourDisplayText = "";
-  formattedHours.forEach((item, index) => {
-    if (index === 0) {
-      hourDisplayText += item;
-      return;
-    }
-    if (index % 2 === 0) {
-      hourDisplayText += `, ${item}`;
-    } else {
-      hourDisplayText += ` - ${item}`;
-    }
-  });
-
-  return hourDisplayText;
 };

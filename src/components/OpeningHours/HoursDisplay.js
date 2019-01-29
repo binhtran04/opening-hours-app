@@ -28,7 +28,12 @@ const HoursDisplay = ({ hours }) => {
   const formattedHours = hours.map(h => formatUnixTime(h.value));
   const hoursDisplayText = generateHoursDisplayText(formattedHours);
 
-  return <Paragraph content={hoursDisplayText} />;
+  return (
+    <Paragraph
+      addClass={`hour ${hoursDisplayText === "Closed" ? "closed" : ""}`}
+      content={hoursDisplayText}
+    />
+  );
 };
 
 HoursDisplay.propTypes = {

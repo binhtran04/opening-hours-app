@@ -5,10 +5,10 @@ import H4 from "../ui/H4";
 
 const DayDisplay = ({ day, isToday }) => {
   return (
-    <div className="">
-      <H3 title={day} />
+    <div className="day__wrapper">
+      <H3 addClass="day__dayoftheweek" title={day} />
 
-      {isToday && <H4 title="TODAY" />}
+      {isToday && <H4 addClass="day__today" title="TODAY" />}
     </div>
   );
 };
