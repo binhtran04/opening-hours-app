@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import InfoList from "./InfoList";
 import "./OpeningHours.css";
 import Typography from "../ui/Typography";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clockIcon from "../../assets/icons/clock-regular.svg";
 
 import { connect } from "react-redux";

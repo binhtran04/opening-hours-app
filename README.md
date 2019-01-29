@@ -1,3 +1,21 @@
+# Opening Hours App
+
+This application takes an JSON input as opening hours of a restaurant and output those hours in a human readable format.
+
+## Getting Started
+
+After cloning the repository, run `npm install` to install all dependencies.
+
+## Starting the application
+
+`npm start` to start the application. After running the script, the application will be open at http://localhost:3000/ in your browser.
+
+## Running the tests
+
+`npm run test` to launch test runner.
+
+==================
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
